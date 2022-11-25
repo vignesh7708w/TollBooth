@@ -11,15 +11,19 @@ public class TollManager {
         // Car entry at 2nd toll
         entryToll("TN12BX3456", "Adam", VehicleType.CAR, 2);
         // Bike entry at 2nd toll
-        entryToll("TN12BX3456", "Adam", VehicleType.BIKE, 2);
+        entryToll("KA56LD8942", "Smith", VehicleType.BIKE, 2);
 
         // Sample Exit
         // Exit first car at 5th toll
-        int cost = exitToll("DL12CD3456", 5);
-        System.out.println(cost);
+        int carCost = exitToll("DL12CD3456", 5);
+        printCost(carCost);
         // Exit bike at 6th toll
-        int bikecost = exitToll("TN12BX3456", 6);
-        System.out.println(bikecost);
+        int bikeCost = exitToll("KA56LD8942", 6);
+        printCost(bikeCost);
+    }
+
+    public static void printCost(int cost){
+        System.out.println("Cost for the vehicle : " + cost);
     }
 
     public static void entryToll(String registrationNumber, String ownerName, VehicleType vehicleType, int entryTollPosition){
